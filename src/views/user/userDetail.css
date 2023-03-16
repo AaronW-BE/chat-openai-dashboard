@@ -1,0 +1,40 @@
+.user-detail-container {
+}
+
+.page-title {
+    padding: 20px;
+    text-align: center;
+}
+.msg-box {
+    width: 720px;
+    height: 600px;
+    overflow-y: scroll;
+    margin: 0 auto;
+    border: 1px solid #d9d9d9;
+}
+.msg-item {
+    margin: 10px;
+}
+.msg {
+    padding: 10px;
+    display: inline-block;
+    max-width: 400px;
+    white-space: break-spaces;
+}
+
+.msg pre {
+    margin: 0;
+    width: 100%;
+    white-space: pre-wrap;
+}
+.msg-user {
+    background-color: #d5d5d5;
+}
+
+.msg-assistant {
+    background-color: #43c943;
+}
+
+.msg-item.user {
+    text-align: right;
+}
