@@ -10,11 +10,16 @@ const axiosInstance = axios.create({
 })
 
 axiosInstance.interceptors.request.use((config) => {
+  // lang modify
+  let lang = localStorage.getItem('lang');
+  if (lang) {
+    config.headers['Accept-Language'] = lang;
+  }
 
   // parse url params
   config.params && Object.keys(config.params).map(k => {
     config.url = config.url.replace(`:${k}`, config.params[k]);
-  })
+  });
 
   console.log('parsed url param', config.url);
 
@@ -41,6 +46,7 @@ axiosInstance.interceptors.response.use((response) => {
   if (response.status === 200) {
     return response.data;
   }
+  throw new Error(response.data)
 }, error => {
   return Promise.reject(error);
 })
@@ -54,11 +60,7 @@ export const GET = (url, params = {}, query = {}, headers = {}) => {
 }
 
 export const POST = (url, params, data, query, headers) => {
-  return axiosInstance.post(url, {
-    data: query,
-    headers,
-    params
-  })
+  return axiosInstance.post(url, data, {headers})
 }
 
 const PUT = () => {

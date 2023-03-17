@@ -1,0 +1,26 @@
+body {
+    background-color: #eee;
+}
+.auth-layout-wrap {
+    padding-top: 100px;
+}
+
+.auth-container {
+    width: 770px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 7px;
+    background-color: #fff;
+    box-shadow: 1px 6px 20px 2px #d5d5d5;
+    display: flex;
+}
+
+.auth-form {
+    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.auth-brand {
+    flex: 1;
+    background-color: #6b6b6b;
+}
